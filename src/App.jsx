@@ -9,10 +9,16 @@ import Contact from './components/contact'
 import CreateAccount from './components/createAccount'
 // import PreLoader from './components/preLoader'
 import { Navigate } from "react-router-dom";
+import { initializeBoafoWidget } from "boafo-accessibility-widget";
 
 
 
 function App() {
+  useEffect(() => {
+    const BOAFO_API_KEY = "boafo_5678";
+    initializeBoafoWidget(BOAFO_API_KEY);
+  }, []);
+
   const router = createBrowserRouter([
     {
       index: true,
